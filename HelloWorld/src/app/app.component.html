@@ -1,6 +1,7 @@
 <!-------------------------------------------------------------------------------------------------------
 -
--  UC1 : To display “Hello from BridgeLabz” using One Way Data Bindings.
+-   UC2 : To display BridgeLabz Logo using Property Binding Technique.
+-       - Modify App Component to display BridgeLabz Logo using Property Binding..
 -  @author : Immanuvel Jeeva
 -  @since  : 28.09.2021
 -
@@ -12,6 +13,11 @@
     -             The title value is mentioned in the app.component.ts file. 
     -->
   <h1>{{this.title}}</h1>
+  
+   <!--
+        Purpose : To bind the src property of an <img> element to a component's property. The property here is imgUrl.
+  -->
+  <img [src]="imgUrl" alt="The BridgeLabz logo : a Bridge to Employement through a Lab works."/>
 </div>
 
 <router-outlet></router-outlet>
