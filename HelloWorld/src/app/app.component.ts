@@ -14,6 +14,11 @@ export class AppComponent {
    title: string = 'hello-world';
    imgUrl: string;
    url: string;
+
+   /**
+    * Specify userName as String Type.
+    */
+   userName: string = "";
   
    /**
      * Method with no return type.
