@@ -1,7 +1,8 @@
 <!-------------------------------------------------------------------------------------------------------
 -
--   UC4 : To display Hello from BridgeLabz with a user inputted name.
--       - Make sure it is two way binding so that the change in the value can be reflected in the Hello Message.
+-  UC5 : To display Hello from BridgeLabz with a user inputted name.
+-        - Ensure the userName is the valid input  consisting of Initial Caps and min 3 Letter.
+-        - In Case Error display the error.
 -  @author : Immanuvel Jeeva
 -  @since  : 28.09.2021
 -
@@ -27,7 +28,8 @@
         Purpose : Bind the input Form Element using [(ngModel)] to userName. (Two-way binding concept)
                   ngModel : Creates a FormControl instance from a domain model and binds it to a form control element.
   -->
-  <input [(ngModel)]="userName"/>
+  <input (input)="onInput($event)" [(ngModel)]="userName"/>
+  <span class="error-output">{{this.nameError}}</span>
 </div>
 
 <router-outlet></router-outlet>

@@ -19,6 +19,7 @@ export class AppComponent {
     * Specify userName as String Type.
     */
    userName: string = "";
+   nameError: string = "";
   
    /**
      * Method with no return type.
@@ -50,9 +51,31 @@ export class AppComponent {
     *               The open() method opens a new browser window, or a new tab, depending on your browser settings and the parameter values.
     *               Using _blank, the url gets opened in a new tab.
     */
+
     onClick($event) {
       console.log("Save button is clicked!", $event);
       window.open(this.url, "_blank");
+    }
+
+    /**
+    * Purpose : To check whether the user-input is valid or not.
+    *           Match the user-input with the regex pattern mentiond.
+    *           If a match occurs, then return nothing; else return error value.
+    *           
+    * @param $event is the event itself.
+    *              For DOM events, $event is the MouseEvent, KeyboardEvent, or the event value of the type of whatever event you listen to.
+    * 
+    * @returns If a match occurs, then return nothing; else return error value.
+    */
+
+    onInput($event) {
+      console.log("Change Event Occurred!", $event.data);
+      const nameRegex = RegExp('^[A-Z]{1}[a-zA-Z\\s]{2,}$');
+      if (nameRegex.test(this.userName)) {
+        this.nameError = "";
+        return;
+      }
+      this.nameError = "Name is incorrect!";
     }
 }
 
